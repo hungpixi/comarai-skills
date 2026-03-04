@@ -1,0 +1,10 @@
+{
+    "owner": "[YOUR_GITHUB]",
+    "slug": "comarai-proposal-gen",
+    "displayName": "Proposal Generator — Comarai",
+    "latest": {
+        "version": "2.0.0",
+        "publishedAt": 1772000000000
+    },
+    "history": []
+}

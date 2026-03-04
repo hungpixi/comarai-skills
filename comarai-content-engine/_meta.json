@@ -1,0 +1,10 @@
+{
+    "owner": "[YOUR_GITHUB]",
+    "slug": "comarai-content-engine",
+    "displayName": "Content Engine — Comarai",
+    "latest": {
+        "version": "2.0.0",
+        "publishedAt": 1772000000000
+    },
+    "history": []
+}

@@ -1,0 +1,10 @@
+{
+    "owner": "[YOUR_GITHUB]",
+    "slug": "comarai-technical-docs",
+    "displayName": "Technical Docs — Comarai",
+    "latest": {
+        "version": "2.0.0",
+        "publishedAt": 1772000000000
+    },
+    "history": []
+}
