@@ -1,10 +1,12 @@
 {
-    "owner": "[YOUR_GITHUB]",
+    "owner": "hungpixi",
     "slug": "comarai-content-engine",
     "displayName": "Content Engine — Comarai",
+    "description": "Hệ thống sản xuất nội dung đa kênh tích hợp với saas-ai-marketing agent. 1-Prompt Autopilot cho Fanpage/TikTok/LinkedIn.",
+    "integrations": ["saas-ai-marketing", "comarai-copywriting"],
     "latest": {
         "version": "2.1.0",
-        "publishedAt": 1782000000000
+        "publishedAt": 1743408000000
     },
     "history": []
 }
