@@ -16,8 +16,11 @@ metadata:
     - "content calendar"
     - "brand voice"
     - "engagement analysis"
+    - "xây kênh marketing"
+    - "lập content pillar"
+    - "tìm ảnh không ai slop"
   author: "Comarai.com"
-  version: "2.0.0"
+  version: "2.1.0"
   based_on: "Comarai original"
   os: [linux, darwin, win32]
 ---
@@ -31,6 +34,8 @@ metadata:
 | *"Turn video TikTok này thành bài LinkedIn + Facebook"* | Repurpose pipeline: 1 → 3 formats |
 | *"Phân tích engagement tuần qua, video nào hit?"* | Performance analytics + recommendations |
 | *"Tìm trending topics liên quan trading/AI automation"* | Trend scan + content angle suggestions |
+| *"Xây content pillar cho kênh dịch vụ AI"* | Thiết kế bộ trụ cột nội dung bám sát phễu chuyển đổi |
+| *"Viết bài Fanpage + tìm ảnh không AI slop"* | Post caption + Prompt Midjourney/Stock search chân thực |
 
 ---
 
@@ -577,6 +582,91 @@ ab_test:
 | Báo sai thông tin | Acknowledge ngay → Đính chính → Edit/delete original |
 | Bị report/tấn công | Document → Report back → Block nếu cần → Đừng đáp trả |
 | Trend nhạy cảm | Đánh giá risk → Chỉ tham gia nếu genuine value → Avoid politics/religion |
+
+---
+
+## 10. Conversion-First Content Pillar Framework
+
+Dành riêng cho việc xây dựng/chuẩn hoá Fanpage hoặc Blog từ đầu.
+Thay vì post lộn xộn, mọi bài viết phải thuộc 1 trong 3 trạng thái phễu (Awareness - Consideration - Decision) + 1 mục tiêu chuyển đổi.
+
+### 10.1 Cấu Trúc Trụ Cột Nội Dung (Pillar Matrix)
+
+```yaml
+content_pillars:
+  # PILLAR 1: AWARENESS (Giáo dục thị trường / Kéo traffic)
+  # Tỷ lệ: 50%
+  Pillar_1_Giao_Duc:
+    muc_tieu: "Tạo sự chú ý, giáo dục nỗi đau (Problem Aware)"
+    loai_noi_dung:
+      - "Sai lầm phổ biến khi..."
+      - "Tại sao [Cách cũ] không còn hiệu quả?"
+      - "Myth buster: Phá bỏ lầm tưởng về [Ngành]"
+    metric_chinh: "Reach, Views, Shares"
+    
+  # PILLAR 2: CONSIDERATION (Xây dựng uy tín / Solution Aware)
+  # Tỷ lệ: 30%
+  Pillar_2_Uy_Tin:
+    muc_tieu: "Chỉ ra vì sao giải pháp của chúng ta độc đáo"
+    loai_noi_dung:
+      - "Case Study: Hành trình từ A đến B của khách hàng"
+      - "Behind the scenes: Quy trình chúng tôi làm việc"
+      - "Framework/Methodology nội bộ"
+    metric_chinh: "Saves, Comments chất lượng, Time on page"
+    
+  # PILLAR 3: DECISION (Chốt sales / Chuyển đổi trực tiếp)
+  # Tỷ lệ: 20%
+  Pillar_3_Chuyen_Doi:
+    muc_tieu: "Call to Action mạnh, push lead về Zalo hoặc Landing Page"
+    loai_noi_dung:
+      - "Giới thiệu Dịch Vụ / Ofer giới hạn"
+      - "Testimonials cực mạnh + CTA"
+      - "FAQ giải quyết nỗi sợ trước khi mua"
+    metric_chinh: "Link Clicks, Inbox/DM, Form Fills"
+```
+
+### 10.2 Quy trình thiết lập kênh mới
+1. Hỏi người dùng về: Sản phẩm cốt lõi? Đối thủ là ai? Nỗi đau lớn nhất khách hàng là gì?
+2. Render ra bảng `Content Pillars` với 12 Idea Cụ thể phân bổ theo tỷ lệ `5-3-2` (5 Awareness - 3 Consideration - 2 Decision).
+3. Generate bài viết đầu tiên kèm chỉ dẫn hình ảnh.
+
+---
+
+## 11. Anti-AI-Slop Visual Sourcing (Hình Ảnh Chân Thực)
+
+Tránh tuyệt đối hình ảnh "nhựa", siêu thực, 3D render vô hồn của Midjourney/DALL-E mặc định. Người dùng mạng xã hội ngày nay có "AI blindness" — họ lướt qua mọi thứ trông có vẻ do AI tạo ra.
+
+### 11.1 Bộ Prompt "Raw & Authentic" (Dùng cho Midjourney/Flux)
+
+Nếu bắt buộc phải AI generate ảnh, LUÔN LUÔN kèm theo các modifier sau vào cuối prompt:
+
+```yaml
+anti_ai_slop_modifiers:
+  # TRÁNH CHỮ (AI thường viết sai hoặc nhìn rợ)
+  rule_1: "--no text, typography, letters, fonts, symbols, 3D render, digital art, smooth, plastic"
+  
+  # PHONG CÁCH "CHỤP CAM THƯỜNG / AMATEUR"
+  style_smartphone: 
+    - "shot on iPhone 14 Pro, candid photography, amateur photo, slightly motion blur, slight noise, harsh fluorescent lighting"
+    - "uploaded to instagram snap, unedited raw photo, mundane daily life"
+  
+  # PHONG CÁCH "VĂN PHÒNG / LÀM VIỆC CHÂN THỰC"
+  style_office:
+    - "messy desk, half-empty coffee cup, authentic startup office, cable clutter, fluorescent overhead light, photo taken by coworker"
+```
+
+**Ví dụ Prompt Xấu (AI Slop):** 
+`"A successful businessman trading stocks on laptop, glowing blue holograms, futuristic, 8k, photorealistic"` (Kết quả: Nhựa, giả tạo).
+
+**Ví dụ Prompt Chuẩn (Authentic):**
+`"Candid photo of an Asian guy in a cafe looking intensely at a Macbook screen, casual t-shirt, messy hair, half empty iced coffee on the table, shot on iPhone 12, slight grain, authentic, natural window lighting --ar 16:9 --no 3d, futuristic, text"`
+
+### 11.2 Stock Search Keywords (Tìm ảnh thật)
+
+Nếu dùng Unsplash, Pexels, hoặc Pinterest, hãy dùng các từ khoá sau để tránh tải nhầm ảnh AI:
+- `Candid workplace`, `Messy office desk`, `Authentic startup team`
+- Dùng filter "Film grain" nếu tự edit. 
+- Ưu tiên ảnh **chỉ thể hiện 1 phần chủ thể** (vai, bàn tay gõ phím, màn hình mờ) thay vì ảnh mẫu tươi cười nhìn thẳng ống kính.
 
 ---
 
